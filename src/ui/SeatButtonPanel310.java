@@ -15,7 +15,7 @@ public class SeatButtonPanel310 extends JPanel {
         this.information = information;
         setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
         seatButtons = new ArrayList<>();
-        computerList = new ArrayList<>(information.getComputerMap310().values());
+        computerList = new ArrayList<>(information.getComputerMap310().values()); // 정보를 가져옴
 
         // 검색을 위한 패널과 컴포넌트 설정
         JPanel searchPanel = new JPanel(new FlowLayout());
@@ -36,45 +36,54 @@ public class SeatButtonPanel310 extends JPanel {
             buttonPanel.add(seatButton);
 
             int index = i;
-            seatButton.addActionListener(e -> createInfoFrame(index));
+            seatButton.addActionListener(e -> createInfoFrame(index)); // 버튼 클릭 시 팝업 창 생성
         }
         searchButton.addActionListener(e -> {
             String searchTerm = searchField.getText().trim();
             highlightMatchingButtons(searchTerm); // 검색어에 맞는 버튼 하이라이트
         });
 
-        private void highlightMatchingButtons(String searchTerm) {
-            // 모든 버튼을 기본 배경으로 설정
-            for (JButton button : seatButtons) {
-                button.setBackground(UIManager.getColor("Button.background"));
-            }
+        add(searchPanel, BorderLayout.NORTH);
+        add(buttonPanel, BorderLayout.CENTER);
+    }
 
-            // 검색어와 일치하는 버튼의 배경색을 변경
-            for (int i = 0; i < computerList.size(); i++) {
-                if (computerList.get(i).contains(searchTerm)) {
-                    seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
-                }
-            }
+    // 검색어에 맞는 버튼 하이라이트
+    private void highlightMatchingButtons(String searchTerm) {
+        // 모든 버튼을 기본 배경으로 설정
+        for (JButton button : seatButtons) {
+            button.setBackground(UIManager.getColor("Button.background"));
         }
 
-        private void createInfoFrame(int index) {
-            JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
-            infoFrame.setSize(280, 150);
-            infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            infoFrame.setLocationRelativeTo(null);
-
-            JPanel panel = new JPanel();
-            JTextArea textArea = new JTextArea();
-            textArea.setEditable(false);
-            textArea.setText(getProgramInfo(index)); // 해당 자리의 프로그램 정보 가져오기
-            panel.add(textArea);
-
-            infoFrame.getContentPane().add(panel);
-            infoFrame.setVisible(true); // 팝업 창 표시
+        // 검색어와 일치하는 버튼의 배경색을 변경
+        for (int i = 0; i < computerList.size(); i++) {
+            if (computerList.get(i).contains(searchTerm)) {
+                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
+            }
         }
+    }
 
+    // 선택한 자리의 프로그램 정보 팝업
+    private void createInfoFrame(int index) {
+        JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
+        infoFrame.setSize(280, 150);
+        infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        infoFrame.setLocationRelativeTo(null);
 
+        JPanel panel = new JPanel();
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textArea.setText(getProgramInfo(index)); // 해당 자리의 프로그램 정보 가져오기
+        panel.add(textArea);
 
+        infoFrame.getContentPane().add(panel);
+        infoFrame.setVisible(true); // 팝업 창 표시
+    }
 
+    // 선택한 자리의 프로그램 정보 반환
+    private String getProgramInfo(int index) {
+        String computerName = computerList.get(index);
+        String programInfo = computerName;
+        return "자리 " + (index + 1) + "에 설치된 프로그램: " + (programInfo != null ? programInfo : "정보 없음");
     }
 }
+
