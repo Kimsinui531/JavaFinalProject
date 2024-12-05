@@ -40,7 +40,6 @@ public class Frame extends JFrame {
             }
         });
 
-
         // 메인 패널에 카드 패널및 사이드 패널 추가
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(sidebar, BorderLayout.WEST);
