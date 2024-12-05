@@ -8,5 +8,25 @@ public class SideBarPanel extends JPanel {
     public SideBarPanel(ActionListener ac) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // 세로 방향으로 구성
         setBackground(new Color(245, 245, 245)); // 배경색 설정
+
+        // 사이드바 항목 추가
+        JLabel home = new JLabel("     Home");
+        home.setOpaque(true);
+        home.setBackground(new Color(45, 75, 122)); // 배경색 설정
+        home.setForeground(Color.WHITE); // 글자색 설정
+        home.setPreferredSize(new Dimension(70, 40)); // JLabel 크기 설정
+
+        JButton move310Button = new JButton("06-310");
+        move310Button.setBackground(new Color(26, 99, 177));
+        move310Button.setForeground(Color.white);
+
+        JButton move408Button = new JButton("06-408");
+        move408Button.setBackground(new Color(26, 99, 177));
+        move408Button.setForeground(Color.white);
+
+        JButton logoutButton = new JButton("나가기");
+        logoutButton.setBackground(new Color(252, 75, 108));
+        logoutButton.setForeground(Color.white);
+
     }
 }
