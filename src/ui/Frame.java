@@ -1,6 +1,7 @@
 package ui;
 
 import cominformation.Information310;
+import cominformation.Information408;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,10 +18,11 @@ public class Frame extends JFrame {
 
         // 정보 객체 생성
         Information310 info310 = new Information310();
+        Information408 info408 = new Information408();
 
         // 패널 추가
         cardPanel.add(createPanel1(cardLayout, cardPanel, info310), "패널 1");
-        cardPanel.add(createPanel2(cardLayout, cardPanel), "패널 2");
+        cardPanel.add(createPanel2(cardLayout, cardPanel, info408), "패널 2");
 
         // 메인 패널에 카드 패널 추가
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -84,7 +86,7 @@ public class Frame extends JFrame {
     }
 
     // 패널 2 생성 메서드
-    private static JPanel createPanel2(CardLayout cardLayout, JPanel cardPanel) {
+    private static JPanel createPanel2(CardLayout cardLayout, JPanel cardPanel, Information408 information) {
         JPanel panel2 = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -102,11 +104,7 @@ public class Frame extends JFrame {
         panel2b.add(screen408);
 
         // 패널 2c (하단 버튼들)
-        JPanel panel2c = new JPanel(new FlowLayout());
-        for (int i = 0; i < 5; i++) {
-            JButton seatButton = new JButton("자리" + (i + 1));
-            panel2c.add(seatButton);
-        }
+        JPanel panel2c = new SeatButtonPanel408(information); // Information310 사용하여 버튼 생성
 
         // GridBagConstraints 설정
         gbc.fill = GridBagConstraints.BOTH;
