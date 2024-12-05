@@ -43,5 +43,20 @@ public class SeatButtonPanel310 extends JPanel {
             highlightMatchingButtons(searchTerm); // 검색어에 맞는 버튼 하이라이트
         });
 
+        private void highlightMatchingButtons(String searchTerm) {
+            // 모든 버튼을 기본 배경으로 설정
+            for (JButton button : seatButtons) {
+                button.setBackground(UIManager.getColor("Button.background"));
+            }
+
+            // 검색어와 일치하는 버튼의 배경색을 변경
+            for (int i = 0; i < computerList.size(); i++) {
+                if (computerList.get(i).contains(searchTerm)) {
+                    seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
+                }
+            }
+        }
+
+
     }
 }
