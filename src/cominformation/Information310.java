@@ -33,7 +33,12 @@ public class Information310 {
             e.printStackTrace(); // 예외 처리
         }
     }
+
+    public LinkedHashMap<String, String> getComputerMap310() {
+        return computerMap310;
+    }
 }
+
 
 
 
