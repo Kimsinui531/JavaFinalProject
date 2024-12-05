@@ -1,5 +1,5 @@
 package ui;
-
+//cominformation패키지 안에 있는 Information310 클래스에서 만든 LinkedHashMap에 있는 데이터들을 이용해서 자리버튼을 만드는 클래스
 import cominformation.Information408;
 
 import javax.swing.*;
@@ -29,6 +29,7 @@ public class SeatButtonPanel408 extends JPanel {
         // 버튼 패널 설정
         JPanel buttonPanel = new JPanel(new FlowLayout());
 
+        // 자리 버튼 생성 및 배치
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
             seatButtons.add(seatButton);
@@ -42,8 +43,10 @@ public class SeatButtonPanel408 extends JPanel {
             highlightMatchingButtons(searchTerm); // 검색어에 맞는 버튼 하이라이트
         });
         add(searchPanel, BorderLayout.NORTH);
-        add(buttonPanel, BorderLayout.SOUTH);
+        add(buttonPanel, BorderLayout.CENTER);
     }
+
+    // 검색어에 맞는 버튼 하이라이트
     private void highlightMatchingButtons(String searchTerm) {
         // 모든 버튼을 기본 배경으로 설정
         for (JButton button : seatButtons) {
@@ -57,6 +60,8 @@ public class SeatButtonPanel408 extends JPanel {
             }
         }
     }
+
+    // 선택한 자리의 프로그램 정보 팝업
     private void createInfoFrame(int index) {
         JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
         infoFrame.setSize(280, 150);
@@ -71,8 +76,9 @@ public class SeatButtonPanel408 extends JPanel {
 
         infoFrame.getContentPane().add(panel);
         infoFrame.setVisible(true); // 팝업 창 표시
-
     }
+
+    // 선택한 자리의 프로그램 정보 반환
     private String getProgramInfo(int index) {
         String computerName = computerList.get(index);
         String programInfo = computerName;
