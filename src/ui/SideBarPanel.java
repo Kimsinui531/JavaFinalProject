@@ -39,5 +39,13 @@ public class SideBarPanel extends JPanel {
         move408Button.addActionListener(ac);
         logoutButton.addActionListener(ac);
 
+        // 사이드바에 버튼 추가
+        add(home);
+        add(move310Button);
+        add(move408Button);
+        add(logoutButton);
+
+        // 사이드바 패널의 크기 조정
+        setPreferredSize(new Dimension(70 , Integer.MAX_VALUE)); // 사이드바의 너비 설정
     }
 }
