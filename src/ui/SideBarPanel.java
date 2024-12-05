@@ -28,5 +28,16 @@ public class SideBarPanel extends JPanel {
         logoutButton.setBackground(new Color(252, 75, 108));
         logoutButton.setForeground(Color.white);
 
+        // 버튼 크기 조정
+        home.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
+        move310Button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
+        move408Button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
+        logoutButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
+
+        // 버튼에 액션 리스너 추가
+        move310Button.addActionListener(ac);
+        move408Button.addActionListener(ac);
+        logoutButton.addActionListener(ac);
+
     }
 }
