@@ -24,8 +24,26 @@ public class Frame extends JFrame {
         cardPanel.add(createPanel1(cardLayout, cardPanel, info310), "패널 1");
         cardPanel.add(createPanel2(cardLayout, cardPanel, info408), "패널 2");
 
-        // 메인 패널에 카드 패널 추가
+        // 사이드바 패널 생성
+        SideBarPanel sidebar = new SideBarPanel(e -> {
+            JButton source = (JButton) e.getSource();
+            switch (source.getText()) {
+                case "06-310":
+                    cardLayout.show(cardPanel, "패널 1");
+                    break;
+                case "06-408": // 수정된 부분
+                    cardLayout.show(cardPanel, "패널 2");
+                    break;
+                case "나가기":
+                    System.exit(0); // 창을 종료
+                    break;
+            }
+        });
+
+
+        // 메인 패널에 카드 패널및 사이드 패널 추가
         JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add(sidebar, BorderLayout.WEST);
         mainPanel.add(cardPanel, BorderLayout.CENTER); // 카드 패널을 중앙에 추가
 
         // 프레임에 메인 패널 추가
