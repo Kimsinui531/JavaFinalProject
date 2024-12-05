@@ -1,5 +1,6 @@
 package ui;
 
+import cominformation.Information310;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,12 +15,14 @@ public class Frame extends JFrame {
         CardLayout cardLayout = new CardLayout();
         JPanel cardPanel = new JPanel(cardLayout);
 
+        // 정보 객체 생성
+        Information310 info310 = new Information310();
+
         // 패널 추가
-        cardPanel.add(createPanel1(cardLayout, cardPanel), "패널 1");
+        cardPanel.add(createPanel1(cardLayout, cardPanel, info310), "패널 1");
         cardPanel.add(createPanel2(cardLayout, cardPanel), "패널 2");
 
-
-        // 메인 패널에 사이드바와 카드 패널 추가
+        // 메인 패널에 카드 패널 추가
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(cardPanel, BorderLayout.CENTER); // 카드 패널을 중앙에 추가
 
@@ -30,7 +33,7 @@ public class Frame extends JFrame {
     }
 
     // 패널 1 생성 메서드
-    private static JPanel createPanel1(CardLayout cardLayout, JPanel cardPanel) {
+    private static JPanel createPanel1(CardLayout cardLayout, JPanel cardPanel, Information310 information) {
         JPanel panel1 = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -48,11 +51,7 @@ public class Frame extends JFrame {
         panel1b.add(screen310);
 
         // 패널 1c (하단 버튼들)
-        JPanel panel1c = new JPanel(new FlowLayout());
-        for (int i = 0; i < 5; i++) {
-            JButton seatButton = new JButton("자리" + (i + 1));
-            panel1c.add(seatButton);
-        }
+        JPanel panel1c = new SeatButtonPanel310(information); // Information310 사용하여 버튼 생성
 
         // GridBagConstraints 설정
         gbc.fill = GridBagConstraints.BOTH;
@@ -108,6 +107,7 @@ public class Frame extends JFrame {
             JButton seatButton = new JButton("자리" + (i + 1));
             panel2c.add(seatButton);
         }
+
         // GridBagConstraints 설정
         gbc.fill = GridBagConstraints.BOTH;
 
@@ -142,5 +142,3 @@ public class Frame extends JFrame {
         Frame frame = new Frame();
     }
 }
-
-
