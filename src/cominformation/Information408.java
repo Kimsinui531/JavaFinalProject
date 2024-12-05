@@ -22,7 +22,12 @@ public class Information408 {
 
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line); // 읽은 라인 출력
+                String[] parts = line.split(":"); // 구분자(:)로 분리
+                if (parts.length == 2) { // 잘 분리된 경우
+                    String cName = parts[0].trim(); // "cName" 저장
+                    String data = parts[1].trim(); // "data" 저장
+                    computerMap408.put(cName, data); // LinkedHashMap에 저장
+                }
             }
         } catch (IOException e) {
             e.printStackTrace(); // 예외 처리
