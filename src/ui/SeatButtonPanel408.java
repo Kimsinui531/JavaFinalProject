@@ -44,8 +44,22 @@ public class SeatButtonPanel408 extends JPanel {
         add(searchPanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.SOUTH);
     }
+    private void highlightMatchingButtons(String searchTerm) {
+        // 모든 버튼을 기본 배경으로 설정
+        for (JButton button : seatButtons) {
+            button.setBackground(UIManager.getColor("Button.background"));
+        }
 
-
+        // 검색어와 일치하는 버튼의 배경색을 변경
+        for (int i = 0; i < computerList.size(); i++) {
+            if (computerList.get(i).contains(searchTerm)) {
+                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
+            }
+        }
     }
+
+
+
+}
 }
 
