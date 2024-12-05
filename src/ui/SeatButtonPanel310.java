@@ -38,5 +38,10 @@ public class SeatButtonPanel310 extends JPanel {
             int index = i;
             seatButton.addActionListener(e -> createInfoFrame(index));
         }
+        searchButton.addActionListener(e -> {
+            String searchTerm = searchField.getText().trim();
+            highlightMatchingButtons(searchTerm); // 검색어에 맞는 버튼 하이라이트
+        });
+
     }
 }
