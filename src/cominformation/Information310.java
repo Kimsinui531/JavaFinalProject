@@ -1,5 +1,5 @@
 package cominformation;
-
+//ComputerProgram310.txt의 정보를 가져와서 해시맵에 저장하는 클래스
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
