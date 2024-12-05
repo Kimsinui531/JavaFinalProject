@@ -71,10 +71,13 @@ public class SeatButtonPanel408 extends JPanel {
 
         infoFrame.getContentPane().add(panel);
         infoFrame.setVisible(true); // 팝업 창 표시
+
     }
-
-
-
+    private String getProgramInfo(int index) {
+        String computerName = computerList.get(index);
+        String programInfo = computerName;
+        return "자리 " + (index + 1) + "에 설치된 프로그램: " + (programInfo != null ? programInfo : "정보 없음");
+    }
 }
 
 
