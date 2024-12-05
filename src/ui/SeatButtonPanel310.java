@@ -1,5 +1,5 @@
 package ui;
-
+//cominformation패키지 안에 있는 Information310 클래스에서 만든 LinkedHashMap에 있는 데이터들을 이용해서 자리버튼을 만드는 클래스
 import cominformation.Information310;
 
 import javax.swing.*;
