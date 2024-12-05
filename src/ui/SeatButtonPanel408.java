@@ -26,6 +26,19 @@ public class SeatButtonPanel408 extends JPanel {
         searchPanel.add(searchField);
         searchPanel.add(searchButton);
 
+        // 버튼 패널 설정
+        JPanel buttonPanel = new JPanel(new FlowLayout());
+
+        for (int i = 0; i < computerList.size(); i++) {
+            JButton seatButton = new JButton("자리 " + (i + 1));
+            seatButtons.add(seatButton);
+            buttonPanel.add(seatButton);
+
+            int index = i;
+            seatButton.addActionListener(e -> createInfoFrame(index));
+        }
+
+
 
     }
 }
