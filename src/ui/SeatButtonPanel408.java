@@ -57,9 +57,24 @@ public class SeatButtonPanel408 extends JPanel {
             }
         }
     }
+    private void createInfoFrame(int index) {
+        JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
+        infoFrame.setSize(280, 150);
+        infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        infoFrame.setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel();
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textArea.setText(getProgramInfo(index)); // 해당 자리의 프로그램 정보 가져오기
+        panel.add(textArea);
+
+        infoFrame.getContentPane().add(panel);
+        infoFrame.setVisible(true); // 팝업 창 표시
+    }
 
 
 
 }
-}
+
 
