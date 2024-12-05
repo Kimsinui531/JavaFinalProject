@@ -1,5 +1,5 @@
 package ui;
-
+//패널 1 UI 구성 로직을 CreatePanel310 클래스로 캡슐화한 클래스
 import cominformation.Information310;
 
 import javax.swing.*;

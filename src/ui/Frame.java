@@ -5,7 +5,6 @@ import cominformation.Information408;
 
 import javax.swing.*;
 import java.awt.*;
-
 public class Frame extends JFrame {
     public Frame() {
         setTitle("자리 안내 프로그램");

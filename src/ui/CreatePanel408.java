@@ -1,5 +1,5 @@
 package ui;
-
+//패널 2 UI 구성 로직을 CreatePanel408 클래스로 캡슐화
 import cominformation.Information408;
 
 import javax.swing.*;
