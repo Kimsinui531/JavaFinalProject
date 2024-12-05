@@ -134,7 +134,6 @@ public class Frame extends JFrame {
 
         // 버튼에 액션 리스너 추가
         buttonToPanel1.addActionListener(e -> cardLayout.show(cardPanel, "패널 1"));
-
         return panel2;
     }
 
