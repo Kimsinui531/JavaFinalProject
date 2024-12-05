@@ -17,5 +17,15 @@ public class SeatButtonPanel310 extends JPanel {
         seatButtons = new ArrayList<>();
         computerList = new ArrayList<>(information.getComputerMap310().values());
 
+        // 검색을 위한 패널과 컴포넌트 설정
+        JPanel searchPanel = new JPanel(new FlowLayout());
+        JTextField searchField = new JTextField(15);
+        JButton searchButton = new JButton("찾기");
+
+        searchPanel.add(new JLabel("찾을 컴퓨터: "));
+        searchPanel.add(searchField);
+        searchPanel.add(searchButton);
+
+
     }
 }
