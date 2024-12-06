@@ -38,7 +38,14 @@ public class SeatButtonPanel408 extends JPanel {
         searchPanel.add(searchField);
         searchPanel.add(searchButton);
 
-
+        searchButton.addActionListener(e -> {
+            String searchTerm = searchField.getText().trim();
+            if (!searchTerm.isEmpty()) {
+                highlightMatchingButtons(searchTerm);
+            } else {
+                JOptionPane.showMessageDialog(this, "검색어를 입력하세요.", "경고", JOptionPane.WARNING_MESSAGE);
+            }
+        });
         return searchPanel;
     }
 
