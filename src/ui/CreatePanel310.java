@@ -10,10 +10,12 @@ public class CreatePanel310 extends JPanel {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
-        // 패널 1a (상단 버튼)
+        // 패널 1a (상단 패널)
         JPanel panel1a = new JPanel(new FlowLayout());
-        JButton buttonToPanel2 = new JButton("06-408로 이동");
-        panel1a.add(buttonToPanel2);
+        JLabel label1 = new JLabel("강의실:06-310호");
+        label1.setForeground(Color.white);
+        panel1a.setBackground(new Color(34, 113, 203));
+        panel1a.add(label1);
 
         // 패널 1b (중간 레이블)
         JPanel panel1b = new JPanel(new FlowLayout());
@@ -50,7 +52,5 @@ public class CreatePanel310 extends JPanel {
         gbc.gridy = 2;
         add(panel1c, gbc);
 
-        // 버튼에 액션 리스너 추가
-        buttonToPanel2.addActionListener(e -> cardLayout.show(cardPanel, "패널 2"));
     }
 }
