@@ -1,5 +1,5 @@
 package ui;
-//cominformation패키지 안에 있는 Information408 클래스에서 만든 LinkedHashMap에 있는 데이터들을 이용해서 자리버튼을 만드는 클래스
+//cominformation패키지 안에 있는 Information310 클래스에서 만든 LinkedHashMap에 있는 데이터들을 이용해서 자리버튼을 만드는 클래스
 import cominformation.Information408;
 
 import javax.swing.*;
@@ -13,14 +13,16 @@ public class SeatButtonPanel408 extends JPanel {
 
     public SeatButtonPanel408(Information408 information) {
         this.information = information;
-        setLayout(new BorderLayout()); // BorderLayout 설정
+        setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
         seatButtons = new ArrayList<>();
-        computerList = new ArrayList<>(information.getComputerMap408().values());
+        computerList = new ArrayList<>(information.getComputerMap408().values()); // 정보를 가져옴
 
         // 검색을 위한 패널과 컴포넌트 설정
         JPanel searchPanel = new JPanel(new FlowLayout());
         JTextField searchField = new JTextField(15);
         JButton searchButton = new JButton("찾기");
+        searchButton.setBackground(new Color(25, 42, 66));
+        searchButton.setForeground(Color.white);
 
         searchPanel.add(new JLabel("찾을 컴퓨터: "));
         searchPanel.add(searchField);
@@ -33,10 +35,12 @@ public class SeatButtonPanel408 extends JPanel {
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
             seatButtons.add(seatButton);
+            seatButton.setBackground(new Color (9, 111, 232));
+            seatButton.setForeground(Color.white);
             buttonPanel.add(seatButton);
 
             int index = i;
-            seatButton.addActionListener(e -> createInfoFrame(index));
+            seatButton.addActionListener(e -> createInfoFrame(index)); // 버튼 클릭 시 팝업 창 생성
         }
         searchButton.addActionListener(e -> {
             String searchTerm = searchField.getText().trim();
@@ -48,15 +52,17 @@ public class SeatButtonPanel408 extends JPanel {
 
     // 검색어에 맞는 버튼 하이라이트
     private void highlightMatchingButtons(String searchTerm) {
-        // 모든 버튼을 기본 배경으로 설정
+        // 모든 버튼 색상 변경
         for (JButton button : seatButtons) {
-            button.setBackground(UIManager.getColor("Button.background"));
+            button.setBackground(new Color (9, 111, 232));
+            button.setForeground(Color.white);
         }
 
         // 검색어와 일치하는 버튼의 배경색을 변경
         for (int i = 0; i < computerList.size(); i++) {
             if (computerList.get(i).contains(searchTerm)) {
-                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
+                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 노란색으로 강조
+                seatButtons.get(i).setForeground(Color.BLACK);
             }
         }
     }
@@ -85,5 +91,8 @@ public class SeatButtonPanel408 extends JPanel {
         return "자리 " + (index + 1) + "에 설치된 프로그램: " + (programInfo != null ? programInfo : "정보 없음");
     }
 }
+
+
+
 
 
