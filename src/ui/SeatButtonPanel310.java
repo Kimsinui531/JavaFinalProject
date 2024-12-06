@@ -85,7 +85,7 @@ public class SeatButtonPanel310 extends JPanel {
 
     private void createInfoFrame(int index) {
         JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
-        infoFrame.setSize(300, 150);
+        infoFrame.setSize(320, 150);
         infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         infoFrame.setLocationRelativeTo(null);
 

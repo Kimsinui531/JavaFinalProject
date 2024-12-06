@@ -27,7 +27,7 @@ public class SeatButtonPanel408 extends JPanel {
         add(buttonPanel, BorderLayout.CENTER);
     }
 
-    private JPanel createSearchPanel() {
+    public JPanel createSearchPanel() {
         JPanel searchPanel = new JPanel(new FlowLayout());
         JTextField searchField = new JTextField(15);
         JButton searchButton = new JButton("찾기");
@@ -85,7 +85,7 @@ public class SeatButtonPanel408 extends JPanel {
     private void createInfoFrame(int index) {
         SwingUtilities.invokeLater(() -> {
             JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
-            infoFrame.setSize(280, 150);
+            infoFrame.setSize(320, 150);
             infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             infoFrame.setLocationRelativeTo(null);
 
