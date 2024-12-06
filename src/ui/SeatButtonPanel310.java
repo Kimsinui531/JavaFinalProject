@@ -21,6 +21,8 @@ public class SeatButtonPanel310 extends JPanel {
         JPanel searchPanel = new JPanel(new FlowLayout());
         JTextField searchField = new JTextField(15);
         JButton searchButton = new JButton("찾기");
+        searchButton.setBackground(new Color(25, 42, 66));
+        searchButton.setForeground(Color.white);
 
         searchPanel.add(new JLabel("찾을 컴퓨터: "));
         searchPanel.add(searchField);
@@ -33,6 +35,8 @@ public class SeatButtonPanel310 extends JPanel {
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
             seatButtons.add(seatButton);
+            seatButton.setBackground(new Color (9, 111, 232));
+            seatButton.setForeground(Color.white);
             buttonPanel.add(seatButton);
 
             int index = i;
@@ -42,22 +46,23 @@ public class SeatButtonPanel310 extends JPanel {
             String searchTerm = searchField.getText().trim();
             highlightMatchingButtons(searchTerm); // 검색어에 맞는 버튼 하이라이트
         });
-
         add(searchPanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
     }
 
     // 검색어에 맞는 버튼 하이라이트
     private void highlightMatchingButtons(String searchTerm) {
-        // 모든 버튼을 기본 배경으로 설정
+        // 모든 버튼 색상 변경
         for (JButton button : seatButtons) {
-            button.setBackground(UIManager.getColor("Button.background"));
+            button.setBackground(new Color (9, 111, 232));
+            button.setForeground(Color.white);
         }
 
         // 검색어와 일치하는 버튼의 배경색을 변경
         for (int i = 0; i < computerList.size(); i++) {
             if (computerList.get(i).contains(searchTerm)) {
-                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 강조
+                seatButtons.get(i).setBackground(Color.YELLOW); // 일치하는 버튼 노란색으로 강조
+                seatButtons.get(i).setForeground(Color.BLACK);
             }
         }
     }
