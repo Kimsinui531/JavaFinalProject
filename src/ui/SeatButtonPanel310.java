@@ -24,7 +24,9 @@ public class SeatButtonPanel310 extends JPanel {
 
         // 버튼 패널 초기화
         JPanel buttonPanel = createButtonPanel();
-        add(buttonPanel, BorderLayout.CENTER);
+        JPanel buttonPanel2 = new JPanel();
+        buttonPanel2.add(buttonPanel);
+        add(buttonPanel2, BorderLayout.CENTER);
     }
 
     private JPanel createSearchPanel() {
@@ -51,11 +53,12 @@ public class SeatButtonPanel310 extends JPanel {
     }
 
     private JPanel createButtonPanel() {
-        JPanel buttonPanel = new JPanel(new FlowLayout());
+        JPanel buttonPanel = new JPanel(new GridLayout());
 
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
             seatButton.setBackground(new Color(9, 111, 232));
+            seatButton.setSize(50,50);
             seatButton.setForeground(Color.white);
             seatButtons.add(seatButton);
             buttonPanel.add(seatButton);
