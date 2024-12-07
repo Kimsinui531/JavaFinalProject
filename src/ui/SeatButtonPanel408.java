@@ -24,10 +24,12 @@ public class SeatButtonPanel408 extends JPanel {
 
         // 버튼 패널 초기화
         JPanel buttonPanel = createButtonPanel();
-        add(buttonPanel, BorderLayout.CENTER);
+        JPanel buttonPanel2 = new JPanel();
+        buttonPanel2.add(buttonPanel);
+        add(buttonPanel2, BorderLayout.CENTER);
     }
 
-    public JPanel createSearchPanel() {
+    private JPanel createSearchPanel() {
         JPanel searchPanel = new JPanel(new FlowLayout());
         JTextField searchField = new JTextField(15);
         JButton searchButton = new JButton("찾기");
@@ -46,15 +48,18 @@ public class SeatButtonPanel408 extends JPanel {
                 JOptionPane.showMessageDialog(this, "검색어를 입력하세요.", "경고", JOptionPane.WARNING_MESSAGE);
             }
         });
+
         return searchPanel;
     }
 
     private JPanel createButtonPanel() {
-        JPanel buttonPanel = new JPanel(new FlowLayout());
+
+        JPanel buttonPanel = new JPanel(new GridLayout());
 
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
             seatButton.setBackground(new Color(9, 111, 232));
+            seatButton.setSize(50,50);
             seatButton.setForeground(Color.white);
             seatButtons.add(seatButton);
             buttonPanel.add(seatButton);
@@ -83,30 +88,24 @@ public class SeatButtonPanel408 extends JPanel {
     }
 
     private void createInfoFrame(int index) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
-            infoFrame.setSize(320, 150);
-            infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            infoFrame.setLocationRelativeTo(null);
+        JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
+        infoFrame.setSize(320, 150);
+        infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        infoFrame.setLocationRelativeTo(null);
 
-            JPanel panel = new JPanel();
-            JTextArea textArea = new JTextArea();
-            textArea.setEditable(false);
-            textArea.setText(getProgramInfo(index));
-            panel.add(textArea);
+        JPanel panel = new JPanel();
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textArea.setText(getProgramInfo(index)); // 해당 자리의 프로그램 정보 가져오기
+        panel.add(textArea);
 
-            infoFrame.getContentPane().add(panel);
-            infoFrame.setVisible(true);
-        });
+        infoFrame.getContentPane().add(panel);
+        infoFrame.setVisible(true); // 팝업 창 표시
     }
+
 
     private String getProgramInfo(int index) {
         String computerName = computerList.get(index);
         return "자리 " + (index + 1) + "에 설치된 프로그램: " + (computerName != null ? computerName : "정보 없음");
     }
 }
-
-
-
-
-
