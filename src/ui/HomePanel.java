@@ -33,7 +33,14 @@ public class HomePanel extends JPanel {
         button.setBackground(new Color(40, 78, 184));  // 버튼 배경색 설정
         button.setForeground(Color.WHITE);  // 버튼 텍스트 색상 설정
         button.addActionListener(ac);
-
     }
+    private void setButtonConstraints() {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;  // 버튼이 위치할 가로 위치
+        gbc.gridy = 0;  // 버튼이 위치할 세로 위치
+        gbc.anchor = GridBagConstraints.CENTER;  // 버튼을 중앙에 배치
+        add(button, gbc);  // 버튼을 JPanel에 추가
+    }
+
 
 }
