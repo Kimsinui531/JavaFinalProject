@@ -28,6 +28,10 @@ public class HomePanel extends JPanel {
     }
 
     private void initializeUI(ActionListener ac) {
-
+        setLayout(new GridBagLayout());  // 레이아웃 설정
+        button = new JButton("실행");  // 버튼 생성
+        button.setBackground(new Color(40, 78, 184));  // 버튼 배경색 설정
+        button.setForeground(Color.WHITE);  // 버튼 텍스트 색상 설정
     }
+
 }
