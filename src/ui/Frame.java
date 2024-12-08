@@ -35,9 +35,20 @@ public class Frame extends JFrame {
         Information310 info310 = new Information310();
         Information408 info408 = new Information408();
 
-        // 패널 추가
+        // HomePanel 생성 시 액션 리스너 전달
+        HomePanel homePanel = new HomePanel(e -> {
+            // 버튼 클릭 시 "패널 1"로 이동
+            cardLayout.show(cardPanel, "패널 1");
+        });
+
+        // 다른 패널 추가
+        cardPanel.add(homePanel, "홈 패널"); // HomePanel을 카드 패널에 추가
         cardPanel.add(new CreatePanel310(cardLayout, cardPanel, info310), "패널 1");
         cardPanel.add(new CreatePanel408(cardLayout, cardPanel, info408), "패널 2");
+
+
+        // 기본 패널 설정 홈 패널을 첫번째로 보여주는 코드 추가
+        cardLayout.show(cardPanel, "홈 패널");
 
         return cardPanel;
     }
@@ -63,5 +74,3 @@ public class Frame extends JFrame {
         new Frame();
     }
 }
-
-
