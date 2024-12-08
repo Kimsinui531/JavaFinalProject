@@ -33,6 +33,7 @@ public class HomePanel extends JPanel {
         button.setBackground(new Color(40, 78, 184));  // 버튼 배경색 설정
         button.setForeground(Color.WHITE);  // 버튼 텍스트 색상 설정
         button.addActionListener(ac);
+        setButtonConstraints();  // 버튼 배치
     }
 
     private void setButtonConstraints() {
