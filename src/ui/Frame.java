@@ -62,7 +62,7 @@ public class Frame extends JFrame {
         cardPanel.add(new CreatePanel310(innerCardLayout, cardPanel, info310), "패널 1");
         cardPanel.add(new CreatePanel408(innerCardLayout, cardPanel, info408), "패널 2");
 
-        // 기본 패널 설정: 패널 1을 첫 번째로 보여줍니다.
+        // 기본 패널 설정: 패널 1을 첫 번째로 보여줌
         innerCardLayout.show(cardPanel, "패널 1");
 
         // 사이드바와 카드 패널을 이너 패널에 추가

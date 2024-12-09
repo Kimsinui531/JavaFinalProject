@@ -1,5 +1,5 @@
 package ui;
-
+//코드를 실행 시켰을때 화면에 처음으로 나오는 화면
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;

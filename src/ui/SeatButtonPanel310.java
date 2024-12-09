@@ -52,6 +52,7 @@ public class SeatButtonPanel310 extends JPanel {
     }
 
     private JPanel createButtonPanel() {
+
         int numberOfRows = 4;
         int numberOfColumns = (int) Math.ceil((double) computerList.size() / numberOfRows); // 총 열 수 계산
 
