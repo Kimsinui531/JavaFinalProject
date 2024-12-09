@@ -52,10 +52,10 @@ public class SeatButtonPanel408 extends JPanel {
     }
 
     private JPanel createButtonPanel() {
-        int numberOfRows = 5;
+        int numberOfRows = 4;
         int numberOfColumns = (int) Math.ceil((double) computerList.size() / numberOfRows); // 총 열 수 계산
 
-        JPanel buttonPanel = new JPanel(new GridLayout(numberOfColumns,5,3,2));
+        JPanel buttonPanel = new JPanel(new GridLayout(numberOfColumns,4,3,2));
 
         for (int i = 0; i < computerList.size(); i++) {
             JButton seatButton = new JButton("자리 " + (i + 1));
