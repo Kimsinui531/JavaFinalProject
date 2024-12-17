@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedHashMap;
 
 public class Information408 {
-    private String input = "C:\\Users\\ksy05\\Desktop\\2-2 수업\\자바스터디\\ComputerProgram408.txt"; // 기본 경로
+    private String input = "resources/data/ComputerProgram408.txt"; // 기본 경로
     private LinkedHashMap <String, String> computerMap408;
 
     public Information408() {
