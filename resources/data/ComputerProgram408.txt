@@ -1,5 +1,16 @@
-1번 컴퓨터 : Eclipse , VMware , 
-2번 컴퓨터 : Eclipse , VMware ,
-3번 컴퓨터 : Eclipse , VMware , Visual Studio Code
-4번 컴퓨터 : Eclipse , 
-5번 컴퓨터 : Eclipse , VMware , Visual Studio Code
+1번 컴퓨터: Eclipse, VMware
+2번 컴퓨터: Eclipse, VMware
+3번 컴퓨터: IntelliJ IDEA, VirtualBox
+4번 컴퓨터: IntelliJ IDEA, Docker
+5번 컴퓨터: NetBeans, Jupyter Notebook
+6번 컴퓨터: NetBeans, Anaconda
+7번 컴퓨터: PyCharm, Vagrant
+8번 컴퓨터: PyCharm, Git
+9번 컴퓨터: Sublime Text, Git
+10번 컴퓨터: Sublime Text, Postman
+11번 컴퓨터: Visual Studio Code, Figma
+12번 컴퓨터: Visual Studio Code, GitHub Desktop
+13번 컴퓨터: Microsoft Visual Studio, Notepad++
+14번 컴퓨터: Microsoft Visual Studio, SQL Server Management Studio
+15번 컴퓨터: Xcode, Homebrew
+16번 컴퓨터: Xcode, Postman
