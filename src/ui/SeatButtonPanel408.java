@@ -9,10 +9,9 @@ public class SeatButtonPanel408 extends JPanel {
 
     private ArrayList<JButton> seatButtons;
     private ArrayList<String> computerList;
-    private Information408 information;
 
     public SeatButtonPanel408(Information408 information) {
-        this.information = information;
+
         setLayout(new BorderLayout());
         seatButtons = new ArrayList<>();
         computerList = new ArrayList<>(information.getComputerMap408().values());
