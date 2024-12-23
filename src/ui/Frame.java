@@ -85,7 +85,7 @@ public class Frame extends JFrame {
                     innerCardLayout.show(cardPanel, "패널 2");
                     break;
                 case "나가기":
-
+                    System.exit(0);
                     break;
             }
         });
