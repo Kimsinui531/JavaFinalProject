@@ -11,6 +11,8 @@ public class Frame extends JFrame {
     private JPanel cardPanel; // cardPanel을 클래스 필드로 선언
 
     public Frame() {
+        // 아이콘 추가
+        setIconImage(Toolkit.getDefaultToolkit().getImage("resources/images/imageicon.png")); // 아이콘 경로 지정
         setTitle("자리 안내 프로그램");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 600);
