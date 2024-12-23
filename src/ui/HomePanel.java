@@ -12,7 +12,7 @@ public class HomePanel extends JPanel {
     private JButton button;
 
     // 이미지 경로를 하드코딩
-    String imagepath = "C:\\Users\\ksy05\\Desktop\\2-2 수업\\자바스터디\\OsImage.png"; //이미지 경로 지정
+    String imagepath = "resources/images/OsImage.png"; //이미지 경로 지정
 
     private void loadImage(String imagePath) {
         try {
