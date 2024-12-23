@@ -90,6 +90,8 @@ public class SeatButtonPanel310 extends JPanel {
 
     private void createInfoFrame(int index) {
         JFrame infoFrame = new JFrame("설치되어 있는 프로그램");
+        // 아이콘 이미지 설정
+        infoFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("resources/images/imageicon.png"));
         infoFrame.setSize(320, 150);
         infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         infoFrame.setLocationRelativeTo(null);
