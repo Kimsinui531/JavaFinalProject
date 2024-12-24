@@ -6,10 +6,44 @@ import cominformation.Information408;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * 자리 안내 프로그램의 메인 프레임을 관리하는 클래스입니다.
+ *
+ * 이 클래스는 카드 레이아웃을 사용하여 다양한 패널 간의 전환을 처리합니다.
+ * 사용자는 2개의 강의실에 특정 컴퓨터에 대한 정보를 확인할 수 있습니다.
+ *
+ * @author KIM SIN UI
+ * @version 1.0
+ * @date 2024-12-23
+ *
+ * @changelog
+ * <ul>
+ *   <li>2024-12-05: 최초 생성 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 초기 프레임 구성 및 06-310 스크린 화면 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 카드 레이아웃 추가 및 패널 전환 기능 구현 (KIM SIN UI)</li>
+ *   <li>2024-12-05: Information310 클래스를 추가하여 컴퓨터 정보를 로드 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 버튼 클릭시 프로그램 정보 표시 기능 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 패널 2 생성 메소드에서 버튼을 SeatButtonPanel408에서 만들 수 있도록 수정 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 사이드바 패널 생성 (KIM SIN UI)</li>
+ *   <li>2024-12-05: Frame 클래스의 패널 클래스 분리 (KIM SIN UI)</li>
+ *   <li>2024-12-05: createCardPanel과 createSideBarPanel 메서드를 추가하여 패널 생성 로직을 분리 (KIM SIN UI)</li>
+ *   <li>2024-12-08: HomePanel 생성 및 카드 패널에 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-09: 프레임 구조 개선 및 카드 레이아웃 통합 (KIM SIN UI)</li>
+ *   <li>2024-12-23: 일부 코드 개선 (KIM SIN UI)</li>
+ *   <li>2024-12-23: 이미지 아이콘 지정한 이미지로 수정 (KIM SIN UI)</li>
+ * </ul>
+ */
+
 public class Frame extends JFrame {
 
-    private JPanel cardPanel; // cardPanel을 클래스 필드로 선언
+    private JPanel cardPanel; // 카드 패널을 클래스 필드로 선언
 
+    /**
+     * Frame 클래스의 생성자입니다.
+     * 프레임의 기본 설정을 초기화하고 패널을 구성합니다.
+     * 아이콘을 설정하고, 기본 제목 및 크기를 지정합니다.
+     * 외부 카드 레이아웃 패널과 이너 카드 패널을 생성합니다.
+     */
     public Frame() {
         // 아이콘 추가
         setIconImage(Toolkit.getDefaultToolkit().getImage("resources/images/imageicon.png")); // 아이콘 경로 지정
@@ -46,6 +80,11 @@ public class Frame extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * 이너 카드 패널을 생성합니다.
+     *
+     * @return 생성된 이너 카드 패널
+     */
     private JPanel createInnerCardPanel() {
         // 이너 카드 레이아웃을 설정합니다.
         CardLayout innerCardLayout = new CardLayout();
@@ -74,6 +113,11 @@ public class Frame extends JFrame {
         return innerCardPanel;
     }
 
+    /**
+     * 사이드바 패널을 생성합니다.
+     *
+     * @return 생성된 사이드바 패널
+     */
     private SideBarPanel createSideBarPanel() {
         return new SideBarPanel(e -> {
             JButton source = (JButton) e.getSource();
@@ -93,6 +137,11 @@ public class Frame extends JFrame {
         });
     }
 
+    /**
+     * 프로그램의 메인 메서드입니다.
+     *
+     * @param args 실행 시 전달된 인수
+     */
     public static void main(String[] args) {
         new Frame();
     }
