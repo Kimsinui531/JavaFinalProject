@@ -28,11 +28,12 @@ import java.util.LinkedHashMap;
  *
  * @changelog
  * <ul>
- *   <li>2024-12-24: 패키지 및 기본 클래스 생성 (KIM SIN UI)</li>
- *   <li>2024-12-24: 파일 읽기 로직 추가 (KIM SIN UI)</li>
- *   <li>2024-12-24: 파일에서 각 라인을 ":" 기준으로 분리하여 LinkedHashMap에 저장(KIM SIN UI)</li>
- *   <li>2024-12-24: 예외 처리 추가(KIM SIN UI)</li>
- *   <li>2024-12-24: 외부에서 정보를 조회 가능하도록 기능 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 패키지 및 기본 클래스 생성 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 파일 읽기 로직 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-05: 파일에서 각 라인을 ":" 기준으로 분리하여 LinkedHashMap에 저장(KIM SIN UI)</li>
+ *   <li>2024-12-05: 예외 처리 추가(KIM SIN UI)</li>
+ *   <li>2024-12-05: 외부에서 정보를 조회 가능하도록 기능 추가 (KIM SIN UI)</li>
+ *   <li>2024-12-17: 데이터 파일 포함 및 경로 수정 (KIM SIN UI)</li>
  *   <li>2024-12-24: 자바독 추가 (KIM SIN UI)</li>
  * </ul>
  */
